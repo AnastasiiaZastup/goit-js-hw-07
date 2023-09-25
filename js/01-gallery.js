@@ -20,6 +20,9 @@ container.insertAdjacentHTML('beforeend', markup);
 container.addEventListener('click', onClick);
 
 function onClick(event) {
+    if (event.target.tagName !== 'IMG') {
+        return;
+    }
     
     const imageSource = event.target.dataset.source;
     const imageAlt = event.target.alt;
